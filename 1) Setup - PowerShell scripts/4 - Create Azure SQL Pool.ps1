@@ -15,7 +15,7 @@ if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -List
 
 ##################################################################################################################
 ##create SQL Pool in Synapse
-$WorkspaceName = 'transportsynapseanalytics'
+$WorkspaceName = "transportsynapseanalytics"
 $databasename = "TransportDW"
 
 New-AzSynapseSqlPool -WorkspaceName $WorkspaceName -Name $databasename -PerformanceLevel DW100c
