@@ -44,3 +44,18 @@ $ctx = New-AzStorageContext -StorageAccountName $Name -StorageAccountKey $key
 $filesystemName = "nyccabdata"
 New-AzStorageContainer -Context $ctx -Name $filesystemName
 ##################################################################################################################
+
+##create folder in data lake
+$filesystemName = "nyccabdata"
+$dirname = "ingestion/"
+New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
+
+##create folder in data lake
+$filesystemName = "nyccabdata"
+$dirname = "ingestion/green/"
+New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
+
+##create folder in data lake
+$filesystemName = "nyccabdata"
+$dirname = "ingestion/yellow/"
+New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
