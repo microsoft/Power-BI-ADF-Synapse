@@ -24,7 +24,7 @@ $Name = "transportsynapseanalytics"
 $Location = "eastus"
 $DefaultDataLakeStorageAccountName = "transsynapsestorage"
 $DefaultDataLakeStorageFilesystem = "synapsecontainer"
-$User = 'TransportSynapseAdmin'
+$User = "TransportSynapseAdmin"
 
 #IMPORTANT: PLEASE EXECUTE ONLY BELOW LINE AND FILL WITH ABOVE PARAMETERS:
 New-AzSynapseWorkspace
