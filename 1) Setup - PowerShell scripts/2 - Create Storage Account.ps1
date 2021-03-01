@@ -26,3 +26,14 @@ $Location = "eastus"
 $kind = "StorageV2"
 New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name $Name -Location $Location -SkuName $SkuName -Kind $kind -EnableHierarchicalNamespace 1
 ##################################################################################################################
+
+##################################################################################################################
+##create container in storage account 
+Select-AzSubscription -SubscriptionId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+$Name = "storageaccountname"
+$key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"        
+
+$ctx = New-AzStorageContext -StorageAccountName $Name -StorageAccountKey $key
+$filesystemName = "synapsecontainer"
+New-AzStorageContainer -Context $ctx -Name $filesystemName
+##################################################################################################################
