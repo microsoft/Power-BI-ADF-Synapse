@@ -29,5 +29,5 @@ CREATE TABLE [operation].[MetadataTableControl](
 	[Active] [bit] NULL,
 	[DataInserted] [datetime] NULL,
 	[DataUpdated] [datetime] NULL
-) ON [PRIMARY]
+)
 GO
