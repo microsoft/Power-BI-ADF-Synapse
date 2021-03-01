@@ -1,39 +1,29 @@
 
-# Learn Template
+# Using Azure Synapse with Microsoft Power BI
 
-This repo is designed to help you create and scaffold your Student/Step 0 content for Microsoft Learn.
+This code will provive you a step-by-step guide to create a DataMart with transport information.
 
-If you've found this repo, but haven't yet:
+This DataMart is build using Azure Data Factory for ELT/ETL and Azure Synapse as database. The final stage of the entire solution is a Power BI report reading the information from DataMart.
 
-1. Read our [Student/Step 0 content strategy doc](https://microsoft-my.sharepoint.com/:w:/g/personal/shanama_microsoft_com1/EWcQMH7tyKNNstzafKABeTwB7TVKhOm5AUoWcBjIvwA3kg?e=zXatFa)
-1. Reached out to Shana Matthews (shanama) 
+Some really important aspects in the solution is how to take advantage of dynamic content in Azure Data Factoty, creating a clean solution from begining to end.
 
-Please take those steps before starting on your content creation journey.
+We will split the solution deployment in:
+
+1. Create Azure Services.
+2. Deploy database scripts.
+3. Deploy Azure Data Factory ARM template.
+
+Before start, we need to check all requirements:
 
 ## Requirements
 
-Talk about the general process:
-- Do your research:
-    - Does this content already exist? What are you bringing new?
-    - Will this work on a student account? (not a deal breaker if not, but would be nice)
-    - Will this work on Mac and PC? How about browser (with CodeSpaces)?
-- Propose to Shana 💍 with [these instructions](./module-proposal.md)
-- Decide on a timeline for project completion
-- Decide what you're building (module, lp) 
-- Outline it using [this module design template](./module-design-template.md) and share with Shana to ensure it is the right size and format
-- Review the [Learn content requirements](https://review.docs.microsoft.com/en-us/learn-docs/docs/content-requirements?branch=master)
-- Clone this template repo
-- Write your content
-- Work with Shana to fill in the yml files
-- Get someone to review it 
-- Deliver the repo to Shana 
-- Respond to PR/DevOps requests from Aquent in the Learn repo
-- Review the content once it's live
-- Participate in a monthly bug bash (if necessary for your content, Shana will let you know)
+- Access to Azure account with permission to create Azure services
+- Permission to install PowerShell components in your local computer
+- A Power BI Free or Pro license
 
-# Module
+# 1 - Create Azure Services
 
-So you want to write a module on it's own or part of a learning path, great! 
+The Azure Services can be created in Azure Portal or executing PowerShell scripts:
 
 ## Files
 
