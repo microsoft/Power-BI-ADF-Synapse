@@ -23,7 +23,7 @@ New-AzSynapseSqlPool -WorkspaceName $WorkspaceName -Name $databasename -Performa
 
 ##################################################################################################################
 ##create SQL Pool in Synapse
-$ResourceGroupName = "TransportationCompanyAnalytics"
+$ResourceGroupName = "transportsynapseanalytics"
 $FirewallRule = "FirewallRule"
 $Location = "eastus"
 New-AzSynapseFirewallRule -WorkspaceName $ResourceGroupName -Name $FirewallRule -StartIpAddress "0.0.0.0" -EndIpAddress "255.255.255.255"
