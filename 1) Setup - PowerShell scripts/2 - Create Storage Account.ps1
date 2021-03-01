@@ -32,8 +32,15 @@ New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name $Name -Location
 Select-AzSubscription -SubscriptionId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 $Name = "storageaccountname"
 $key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"        
-
 $ctx = New-AzStorageContext -StorageAccountName $Name -StorageAccountKey $key
 $filesystemName = "synapsecontainer"
+New-AzStorageContainer -Context $ctx -Name $filesystemName
+
+##create container in storage account 
+Select-AzSubscription -SubscriptionId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+$Name = "storageaccountname"
+$key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"        
+$ctx = New-AzStorageContext -StorageAccountName $Name -StorageAccountKey $key
+$filesystemName = "nyccabdata"
 New-AzStorageContainer -Context $ctx -Name $filesystemName
 ##################################################################################################################
