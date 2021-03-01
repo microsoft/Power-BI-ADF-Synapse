@@ -20,7 +20,7 @@ Import-Module Az.Storage
 
 #Create Data Lake Storage Gen2:
 $ResourceGroupName = "TransportationCompanyAnalytics"
-$Name = "storageaccounrname"
+$Name = "storageaccountname"
 $SkuName = "Standard_LRS"
 $Location = "eastus"
 $kind = "StorageV2"
