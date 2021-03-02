@@ -1,3 +1,8 @@
+  --1) Start dedicated SQL Pool
+
+--2) Connect your Azure Data Studio, Management Studio or select develop tab in your Synapse workspace
+
+--3) Execute below script:
 ----------------END - TRUNCATE TABLE dw.DimVendor;
 TRUNCATE TABLE dw.DimVendor;
 INSERT INTO dw.DimVendor VALUES (1,1,'Creative Mobile Technologies, LL');
