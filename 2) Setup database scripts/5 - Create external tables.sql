@@ -1,5 +1,5 @@
 --need to create a master key once per database.
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Br@151385';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'xxxxxxxx';
 
 IF NOT EXISTS(SELECT * FROM sys.database_credentials WHERE name = 'SynapseManagedIdentity')
 	CREATE DATABASE SCOPED CREDENTIAL [SynapseManagedIdentity] WITH IDENTITY = 'Managed Identity'
@@ -10,10 +10,10 @@ IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParq
 	WITH ( FORMAT_TYPE = PARQUET)
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'transportdw_transsynapsestorage_dfs_core_windows')
-	CREATE EXTERNAL DATA SOURCE [transportdw_transsynapsestorage_dfs_core_windows] 
-	WITH (
-		LOCATION   = 'abfss://nyccabdata@brcarvalpbisynapseadl2.dfs.core.windows.net', 
+IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'transportdw_storageaccountname_dfs_core_windows')
+	CREATE EXTERNAL DATA SOURCE [transportdw_storageaccountname_dfs_core_windows]
+	WITH (                               
+		LOCATION   = 'abfss://nyccabdata@storageaccountname.dfs.core.windows.net', 
 		TYPE       = HADOOP, 
 		CREDENTIAL = SynapseManagedIdentity 
 	)
@@ -43,7 +43,7 @@ CREATE EXTERNAL TABLE stage.External_NYCCabTrip_Green (
 	)
 	WITH (
 	LOCATION = 'ingestion/green/',
-	DATA_SOURCE = [transportdw_transsynapsestorage_dfs_core_windows],
+	DATA_SOURCE = [transportdw_storageaccountname_dfs_core_windows],
 	FILE_FORMAT = [SynapseParquetFormat],
 	REJECT_TYPE = VALUE,
 	REJECT_VALUE = 0
@@ -72,7 +72,7 @@ CREATE EXTERNAL TABLE stage.External_NYCCabTrip_Yellow (
 	)
 	WITH (
 	LOCATION = 'ingestion/yellow/',
-	DATA_SOURCE = [transportdw_transsynapsestorage_dfs_core_windows],
+	DATA_SOURCE = [transportdw_storageaccountname_dfs_core_windows],
 	FILE_FORMAT = [SynapseParquetFormat],
 	REJECT_TYPE = VALUE,
 	REJECT_VALUE = 0
