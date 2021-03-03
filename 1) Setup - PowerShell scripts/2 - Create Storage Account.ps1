@@ -59,3 +59,11 @@ New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname 
 $filesystemName = "nyccabdata"
 $dirname = "ingestion/yellow/"
 New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
+
+##Create container in data lake
+Select-AzSubscription -SubscriptionId 98507abb-3ae1-4007-8959-24de849d9657
+$Name = "transsynapsestorage"
+$key = "mGbI/OJA/+vVbKd0MS8gzRSLeC0TwrVqD9mqVVd3vd6YIluNgNp3+Wb9LFhaM2YrqxTZ2OuGG+TldBdfj1JZQw=="
+$ctx = New-AzStorageContext -StorageAccountName $Name -StorageAccountKey $key
+$filesystemName = "stagearea"
+New-AzStorageContainer -Context $ctx -Name $filesystemName
