@@ -60,6 +60,11 @@ $filesystemName = "nyccabdata"
 $dirname = "ingestion/yellow/"
 New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
 
+##create folder in data lake
+$filesystemName = "nyccabdata"
+$dirname = "ingestion/lookup/"
+New-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Directory
+
 ##Create container in data lake
 Select-AzSubscription -SubscriptionId 98507abb-3ae1-4007-8959-24de849d9657
 $Name = "transsynapsestorage"
