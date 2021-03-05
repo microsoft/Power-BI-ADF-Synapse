@@ -366,4 +366,11 @@ INSERT INTO [operation].[MetadataTableControl] VALUES (
 'Synapse',NULL,'TransportDW','dw','DimLocation',NULL,NULL,NULL,
 NULL,1,NULL,NULL
 )
+
+INSERT INTO [operation].[MetadataTableControl] VALUES (
+52,'NYC Ride Analysis','Load Facts','FactCabTrip',301,
+'Synapse',NULL,'TransportDW','dw','FactCabTrip',NULL,NULL,NULL,
+'Synapse',NULL,NULL,NULL,NULL,NULL,NULL,NULL,
+NULL,1,NULL,NULL
+)
 -------------------------------------------END - DW Tables
