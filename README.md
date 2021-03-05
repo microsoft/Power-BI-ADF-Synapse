@@ -39,7 +39,7 @@ The Azure Services can be created in Azure Portal or executing PowerShell script
 
 # 2 - Create Synapse objects
 
-Once you create Azure services, is necessary to deploy Synapse objects. Please execute next steps:
+Once you create Azure services, is necessary to deploy database objects. Please execute next steps:
 
 [Scripts location](https://github.com/brunohca/Power-BI-ADF-Synapse/tree/patch-1/1%20-%20Setup%20database%20scripts)
 
@@ -66,4 +66,5 @@ The Azure Services can be created in Azure Portal or executing PowerShell script
 Is necessary to upload a file into the storage account. Please fallow the instructions:
 
 1.1 - Download file named "taxi_zone_lookup.csv": [Dowload CSV file](https://github.com/brunohca/Power-BI-ADF-Synapse/tree/patch-1/3)
+
 2.2 - Upload file into this location in the storage account: "nyccabdata\ingestion\lookpup\taxi_zone_lookup.csv"
