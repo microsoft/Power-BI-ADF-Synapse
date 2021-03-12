@@ -31,7 +31,8 @@ New-AzSynapseWorkspace
 
 ##################################################################################################################
 ##Grant IAM permission for Synapse Studio into storage account
-New-AzRoleAssignment -ObjectId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ` ##Synapse workspace objectID
--RoleDefinitionName "Storage Blob Data Constributor" `
--Scope "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TransportationCompanyAnalytics/providers/Microsoft.Storage/storageAccounts/[Storage Account Name]"
+$ObjectID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+$RoleDefinitionName = "Storage Blob Data Contributor"
+$Scope = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TransportationCompanyAnalytics/providers/Microsoft.Storage/storageAccounts/[Storage Account Name]"
+New-AzRoleAssignment -ObjectId $ObjectID -RoleDefinitionName $RoleDefinitionName -Scope $Scope
 ##################################################################################################################
