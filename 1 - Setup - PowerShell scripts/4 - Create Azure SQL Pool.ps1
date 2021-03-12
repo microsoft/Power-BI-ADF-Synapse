@@ -17,7 +17,7 @@ Install-Module Az.Synapse
 
 ##################################################################################################################
 ##create SQL Pool in Synapse
-$WorkspaceName = "transportsynapseanalytics2"
+$WorkspaceName = "transportsynapseanalytics"
 $databasename = "TransportDW"
 
 New-AzSynapseSqlPool -WorkspaceName $WorkspaceName -Name $databasename -PerformanceLevel DW100c
@@ -25,7 +25,7 @@ New-AzSynapseSqlPool -WorkspaceName $WorkspaceName -Name $databasename -Performa
 
 ##################################################################################################################
 ##FirewallRule
-$ResourceGroupName = "transportsynapseanalytics2"
+$ResourceGroupName = "transportsynapseanalytics"
 $FirewallRule = "FirewallRule"
 $Location = "eastus"
 New-AzSynapseFirewallRule -WorkspaceName $ResourceGroupName -Name $FirewallRule -StartIpAddress "0.0.0.0" -EndIpAddress "255.255.255.255"
