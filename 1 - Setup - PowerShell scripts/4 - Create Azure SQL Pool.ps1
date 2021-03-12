@@ -13,17 +13,19 @@ if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -List
     Install-Module -Name Az -AllowClobber -Scope CurrentUser
 }
 
+Install-Module Az.Synapse
+
 ##################################################################################################################
 ##create SQL Pool in Synapse
-$WorkspaceName = "transportsynapseanalytics"
+$WorkspaceName = "transportsynapseanalytics2"
 $databasename = "TransportDW"
 
 New-AzSynapseSqlPool -WorkspaceName $WorkspaceName -Name $databasename -PerformanceLevel DW100c
 ##################################################################################################################
 
 ##################################################################################################################
-##create SQL Pool in Synapse
-$ResourceGroupName = "transportsynapseanalytics"
+##FirewallRule
+$ResourceGroupName = "transportsynapseanalytics2"
 $FirewallRule = "FirewallRule"
 $Location = "eastus"
 New-AzSynapseFirewallRule -WorkspaceName $ResourceGroupName -Name $FirewallRule -StartIpAddress "0.0.0.0" -EndIpAddress "255.255.255.255"
