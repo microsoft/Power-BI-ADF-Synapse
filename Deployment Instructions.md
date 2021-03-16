@@ -1,5 +1,7 @@
 # Project
 
+![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/Epa.png)
+
 # Using Azure Synapse with Microsoft Power BI
 
 This code will provive you a step-by-step guide to create a DataMart with transport information.
