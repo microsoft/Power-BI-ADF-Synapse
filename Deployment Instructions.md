@@ -1,6 +1,6 @@
 # Project
 
-![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/Epa.png)
+![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/SolutionArchitecture.png)
 
 # Using Azure Synapse with Microsoft Power BI
 
