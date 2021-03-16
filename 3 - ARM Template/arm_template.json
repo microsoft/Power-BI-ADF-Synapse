@@ -1,14 +1,19 @@
-#1) Replace storage account key in row 14 with your storage account key value.
+#1) Replace storage account key in row 14 with your storage account key value:
 #Insert your storage account key. [Replace with your storage account key]
 
 #2) Replace server value for dataset: "ds_Synapse_DataFlow_Var"
-#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name.
+#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name:
 
 #3) Replace server value for linked server: "ls_Synapse_TransportDW"
-#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name.
+#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name:
 
 #4) Replace server value for linked server: "ls_Synapse_Operation"
-#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name.
+#ServerName value from "[ServerName].sql.azuresynapse.net" to  your Synapse server name:
+
+#5) Storage account for datasets: "ds_ADL2_NYCRideAnalysis_parquet" and "ds_ADL2_NYCRideAnalysis_csv":
+#StorageAccount value for "[StorageAccount].
+
+#6) Search for "[StorageAccount]" and replace with your storage account name.
 
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -200,7 +205,7 @@
                 "parameters": {
                     "StorageAccount": {
                         "type": "string",
-                        "defaultValue": "transsynapsestorage"
+                        "defaultValue": "[StorageAccount]"
                     },
                     "ContainerName": {
                         "type": "string",
@@ -262,7 +267,7 @@
                 "parameters": {
                     "StorageAccount": {
                         "type": "string",
-                        "defaultValue": "transsynapsestorage"
+                        "defaultValue": "[StorageAccount]"
                     },
                     "ContainerName": {
                         "type": "string",
@@ -1395,7 +1400,7 @@
                 "variables": {
                     "StorageAccountName": {
                         "type": "String",
-                        "defaultValue": "transsynapsestorage"
+                        "defaultValue": "[StorageAccount]"
                     }
                 },
                 "folder": {
@@ -1798,7 +1803,7 @@
                 "variables": {
                     "StorageAccountName": {
                         "type": "String",
-                        "defaultValue": "transsynapsestorage"
+                        "defaultValue": "[StorageAccount]"
                     }
                 },
                 "folder": {
