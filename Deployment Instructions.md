@@ -20,7 +20,7 @@ We will split the solution deployment in:
 ## Azure Data Factory solution:
 ![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/AzureDataFactory.png)
 
-Understanding configuration table
+[Understanding configuration table](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Understanding%20configuration%20table.md)
 
 Before start, we need to check all requirements:
 
