@@ -26,7 +26,6 @@
         },
         "ls_transport_transformation_adl2_accountKey": {
             "type": "secureString",
-            #Storage account key:
             "defaultValue": "[Replace with your storage account key]"
         },
         "ls_Synapse_TransportDW_connectionString": {
@@ -149,7 +148,9 @@
                     "referenceName": "ls_Synapse_TransportDW",
                     "type": "LinkedServiceReference",
                     "parameters": {
-                        "UserName": "TransportSynapseAdmin"
+                        "server": "tcp:transportsynapseanalytics.sql.azuresynapse.net,1433",
+                        "database": "TransportDW",
+                        "username": "TransportSynapseAdmin"
                     }
                 },
                 "parameters": {
@@ -1712,9 +1713,18 @@
                                     "GetMaxCabTripKey": {},
                                     "ReadDimCabType": {},
                                     "InsertIntodwFactCabTrip": {
-                                        "DatabaseName": "DatabaseName",
-                                        "SchemaName": "SchemaName",
-                                        "TableName": "TableName"
+                                        "DatabaseName": {
+                                            "value": "@activity('Get table to load').output.firstrow.SourceControl1",
+                                            "type": "Expression"
+                                        },
+                                        "SchemaName": {
+                                            "value": "@activity('Get table to load').output.firstrow.SourceControl2",
+                                            "type": "Expression"
+                                        },
+                                        "TableName": {
+                                            "value": "@activity('Get table to load').output.firstrow.SourceControl3",
+                                            "type": "Expression"
+                                        }
                                     }
                                 }
                             },
@@ -1724,7 +1734,7 @@
                                     "type": "LinkedServiceReference",
                                     "parameters": {
                                         "StorageAccount": {
-                                            "value": "@variables('StorageAccountName')",
+                                            "value": "@activity('Get stage storage account').output.firstrow.DestinationControl1",
                                             "type": "Expression"
                                         }
                                     }
@@ -1805,7 +1815,7 @@
                         "type": "String",
                         "defaultValue": "[StorageAccount]"
                     }
-                },
+                },                
                 "folder": {
                     "name": "NYC Data Transformation"
                 },
