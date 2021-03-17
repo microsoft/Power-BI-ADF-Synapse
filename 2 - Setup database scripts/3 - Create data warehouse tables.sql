@@ -80,7 +80,7 @@ GO
 
 CREATE TABLE dw.FactCabTrip
     (
-    CabTripKey                bigint identity(1,1)  NOT NULL,
+    CabTripKey                int NOT NULL,
     VendorKey                 int,
     CabTypeKey                int,
     LpepPickupDatetime        datetime,
