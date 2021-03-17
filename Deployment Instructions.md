@@ -1,20 +1,26 @@
 # Project
 
-![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/SolutionArchitecture.png)
-
 # Using Azure Synapse with Microsoft Power BI
 
 This code will provive you a step-by-step guide to create a DataMart with transport information.
 
-This DataMart is build using Azure Data Factory for ELT/ETL and Azure Synapse as database. The final stage of the entire solution is a Power BI report reading the information from DataMart.
+This DataMart is build using Azure Data Factory for ELT/ETL and Azure Synapse as database. The final stage is a Power BI report reading the information from DataMart.
 
-Some really important aspects in the solution is how to take advantage of dynamic content in Azure Data Factoty, creating a clean solution from begining to end.
+Some important aspects in the solution is how to take advantage of dynamic content in Azure Data Factoty, creating a clean solution from begining to end.
 
 We will split the solution deployment in:
 
 1. Create Azure Services.
 2. Deploy database scripts.
 3. Deploy Azure Data Factory ARM template.
+
+## General architecture:
+![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/SolutionArchitecture.png)
+
+## Azure Data Factory solution:
+![alt text](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Support%20Files/AzureDataFactory.png)
+
+Understanding configuration table
 
 Before start, we need to check all requirements:
 
