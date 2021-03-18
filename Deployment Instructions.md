@@ -8,6 +8,10 @@ This DataMart is build using Azure Data Factory for ELT/ETL and Azure Synapse as
 
 Some important aspects in the solution is how to take advantage of dynamic content in Azure Data Factoty, creating a clean solution from begining to end.
 
+# What can be achieved?
+
+The idea of the solution is to speed-up ETL / ETL development and simplify how you code your pipelines in Azure Data Factory. Also how you can take advantage of using a combination of Azure Synapse and Power BI as your standard serving layer solution.
+
 We will split the solution deployment in:
 
 1. Create Azure Services.
