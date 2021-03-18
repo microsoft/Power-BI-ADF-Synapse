@@ -26,8 +26,6 @@ We will split the solution deployment in:
 
 [Understanding configuration table](https://github.com/microsoft/Power-BI-ADF-Synapse/blob/main/Understanding%20configuration%20table.md)
 
-Before start, we need to check all requirements:
-
 ## Requirements
 
 - Access to Azure account with permission to create Azure services
